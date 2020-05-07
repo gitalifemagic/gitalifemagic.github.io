@@ -13,38 +13,38 @@
 		<link href="./css/css" rel="stylesheet">
 
         <link href="./css/main.css" rel="stylesheet">
-        
+
 
 	</head>
 	    
 <body class="presentation-page sidebar-collapse vsc-initialized" data-gr-c-s-loaded="true">
 
-      <style>.bg-mohit{background :#E9D022;}</style>
-    <!-- Navbar -->
-	<nav class="navbar navbar-expand-lg  bg-mohit fixed-top navbar-transparent" color-on-scroll="500">
+      <style>.bg-mohit{background :#E9D022; color: #000000;}</style>
+
+    	<nav class="navbar navbar-expand-lg  bg-mohit fixed-top " color-on-scroll="500">
 		<div class="container">
 			<div class="navbar-translate">
-				<a class="navbar-brand " href="#" rel="tooltip" title="" data-placement="bottom" >
+				<a class="navbar-brand " href="#" rel="tooltip" title="Welcome to Gita Life Magic" data-placement="bottom" >
 					<strong>GitaLifeMagic</strong>
 				</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" id="navtoggler" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
 			   		<span class="navbar-toggler-bar top-bar"></span>
 					<span class="navbar-toggler-bar middle-bar"></span>
 					<span class="navbar-toggler-bar bottom-bar"></span>
 			 	</button>
 			</div>
-		    <div class="collapse navbar-collapse has-image show" data-color="orange" style="background: url(&quot;./assets/img//blurred-image-1.jpg&quot;) 0% 0% / cover;">
-				<ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
+		    <div class="navbar-collapse show" data-color="orange" id="navigation"  >
+                <ul class="navbar-nav navbar-center ml-auto" >
+                    <li class="nav-item" >
                         <a href="#results" class="nav-link">
                             <strong>Our Results</strong>
                         </a>
                     </li>
-					<li class="nav-item">
-						<a href="#aboutus" class="nav-link">
-							<strong>About US</strong>
-						</a>
-					</li>
+                    <li class="nav-item">
+                        <a href="#aboutus" class="nav-link">
+                            <strong>About US</strong>
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a href="#Sessions" class="nav-link">
                             <strong>Our Events</strong>
@@ -52,11 +52,11 @@
                     </li>
                     
 
-					<li class="nav-item ">
-						<a href="#contactus" class="nav-link btn btn-info">			
-							<strong>Contact US</strong>
-						</a>
-					</li>
+                    <li class="nav-item ">
+                        <a href="#contactus" class="nav-link btn btn-info">         
+                            <strong>Contact US</strong>
+                        </a>
+                    </li>
                     <li class="nav-item ">
                         <a href="./quizzes.html" class="nav-link btn btn-success">          
                             <strong>Quizzes</strong>
@@ -67,13 +67,13 @@
                             <strong>Register</strong>
                         </a>
                     </li>
-				</ul>
+               </ul>
 		    </div>
 		</div>
 	</nav>
-<!-- End Navbar -->
 
 
+  
 	<style>
         .row-header{
             margin : 0px auto;
@@ -82,12 +82,12 @@
         .jumbotron{
             padding:70px 30px 60px 30px;
             margin :0px auto;
-            background : #E89F1C ;
-            color : floralwhite;
+            background : #F4B41A ;
+            color : #143D59;
         }
     </style>
             
-    <header class="jumbotron">
+    <header class="jumbotron d-none d-sm-block">
             <div class="container">
                 <div class="row row-header">
                     <div class="col-12 col-sm-6 offset-sm-3">
@@ -111,7 +111,230 @@
         .btn-darkm{
             background-color: #2F4F4F;
         }
+        .mycolor{
+            background-color: #eFc9af;
+            color : #104c91;
+        }
+        .mycolor2{
+            background-color: #F4B41A ;
+            color : #143D59;
+        }
+        .mycolor3{
+            background-color: #ffffff ;
+            color : #000000;
+        }
     </style>
+   
+    
+                
+    
+    <div id="quizModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="quizModalLabel" aria-hidden="true">
+      <div class="modal-dialog mycolor3" role="document">
+        <div class="modal-content">
+          <div class="modal-header mycolor3">
+            <h5 class="modal-title" id="quizModalLabel">How many children did King Dasharath had?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+                <p class="text-center">
+                    <button onclick="wrongAns()" id="mbtn10"role="button" class="btn btn-info ">10</button>&nbsp 
+                    <button onclick="wrongAns()" id="mbtn4" role="button" class="btn btn-info ">4</button>&nbsp
+                    <button onclick="wrongAns()" id="mbtn5"role="button" class="btn btn-info ">5</button>&nbsp 
+                    <button onclick="wrongAns()" id="mbtn6" role="button" class="btn btn-info ">6</button> 
+                </p>
+                <hr />
+                <div id="ans" style="display: none;">
+                    <p>King Dasharath also had a daughter!</p>
+                    <hr>
+                </div>
+                <h5>Do you want to Know more such facts? Give Complete Quiz!</h5>
+                <form id="quizform" name="submit-to-google-sheet">
+                            <div class="form-group row"> 
+                                    <div class="col-12 ">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="name" name="firstName" placeholder="Full Name" required>
+                                        </div>                                   
+                                    </div>
+                            </div>                            
+                            <div class="form-group row"> 
+                                    <div class="col-12 ">
+                                        <div class="input-group">
+                                            <input type="email" class="form-control" id="email" name="email" placeholder="Email Id" required>
+                                        </div>                                   
+                                    </div>
+                            </div>
+                            <div class="form-group row"> 
+                                    <div class="col-12 ">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone Number" required>
+                                        </div>                                   
+                                    </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-11 offset-1">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Take Me to the Quiz</button>
+                                </div>
+                            </div>
+                        </form>
+            </div>
+        </div>
+      </div>
+    </div>
+     <script>
+    function wrongAns(){
+        document.getElementById("ans").style.display = "block";
+        document.getElementById("mbtn10").classList.remove("btn-info");
+        document.getElementById("mbtn6").classList.remove("btn-info");
+        document.getElementById("mbtn4").classList.remove("btn-info");
+        document.getElementById("mbtn5").classList.remove("btn-info");
+       
+        document.getElementById("mbtn10").classList.add("btn-primary");
+        document.getElementById("mbtn6").classList.add("btn-primary");
+        document.getElementById("mbtn4").classList.add("btn-primary"); 
+        document.getElementById("mbtn5").classList.add("btn-success");
+    }
+
+    </script>
+
+
+
+
+         
+
+    <div class="section section-components mycolor"  id="aboutus">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 ml-auto mr-auto">
+                    <div class="text-center d-none d-sm-block"><button onclick="showQuizModal()" class=" btn btn-info ">I came here for Quizzes! </button></div>
+                    <h2 class="text-center title">About US
+                        <h5 class="text-center ">We are group of IITIANS, whose lives have been transformed by the teachings of Bhagavad Gita. <span class="d-none d-sm-block">Hence we are trying to spread it's teachings to make a better world. And the best thing is,</span></h5>
+                    <h1 class="text-center"><large>WE are FREE FOREVER</large></h1>
+                    <h5 class="text-center ">Below are few books on whose our teachings are based, they include but not limited to Srimad Bhagavad Gita, Srimad Bhagavatam,<span class="d-none d-sm-block"> Brahma Samhita, MahaBharata, Ramayan</span> and manymore.</h5>
+
+                    <div class="space-50"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card-container first-card">
+                        <div class="card-component">
+                            <a id="Bhagavad-Gita-Button" role="button" href="https://vedabase.io/en/library/bg/">
+                                <div class="front">
+                                    <img src="./img/bgcard.jpg" alt="Bhagavad Gita">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-container second-card">
+                        <div class="card-component">
+                            <a id="Srimad-Bhagavatam-Button" role="button" href="https://vedabase.io/en/library/sb/">
+                                <div class="front">
+                                    <img src="./img/sbcard.jpg" alt="Srimad Bhagavatam">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-container third-card">
+                        <div class="card-component">
+                            <a id="Mahabharata-Button" role="button" href="https://vedabase.io/en/library/mbk/">
+                                <div class="front">
+                                    <img src="./img/mahabhartacard.jpg" alt="Mahabharata">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+    <div class="features-3" id="Sessions">
+        <div class="container">
+            <div class="row quizpop" >
+                <div class="col-md-8 ml-auto mr-auto">
+                    <h2 class="title">Fun Quizzes</h2>
+                    <h4 class="">Gita Life Magic brings to you fun filled Free Prizes, like earphones, books, and manymore..</h4>
+                    <a class="btn btn-darkm" href="./quizzes.html">Play NOW!</a>
+                </div>
+            </div>
+            <div class="row d-none d-sm-block">
+                <div class="col-md-8 ml-auto mr-auto">
+                    <h2 class="title">Events and Programmes</h2>
+                    <p class="description">We conduct many online and offline sessions, workshops and camps all free of cost. Our one hour long sessions that surely transforms lives are the most populated and famous amongst youth.</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="info info-hover">
+                        <div class="icon icon-info ">
+                            <h1 >Work Shops</h1>
+                        </div>
+                        <h4 class="info-title">Time Management</h4>
+                        <h4 class="info-title">Stress Management</h4>
+                        <h4 class="info-title">Work and Life Balance</h4>
+                        <p class="description d-none d-sm-block">And Many more. These are 4-5 hour long events with theroy and practicals, held weekly to hone hidden leader inside you. Register now to know more.</p>
+                        <a class="btn btn-info" href="#register">Register NOW!</a>
+                        
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="info info-hover">
+                        <div class="icon icon-primary ">
+                            <h1 >Sessions</h1>
+                        </div>
+                        <h4 class="info-title">Can A Scientist Believe in God?</h4>
+                        <h4 class="info-title">Law of Karma</h4>
+                        <h4 class="info-title">Vedas : Isn't Following the Blind Faith.</h4>
+                        <p class="description d-none d-sm-block">And Many more. These are 1-2 hour long sessions, held weekly that kindle the hidden talents inside you. Register now to know more.</p>
+                        <a class="btn btn-primary" href="#register">Register NOW!</a>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="info info-hover">
+                        <div class="icon icon-success ">
+                            <h1 >Camps</h1>
+                        </div>
+                        <h4 class="info-title">2 Day Camps</h4>
+                        <h4 class="info-title">7 Day Camps</h4>
+                        <h4 class="info-title">28 Day Camps.</h4>
+                        <p class="description d-none d-sm-block">Objective of camps to train the future leader. Our trained students have been placed in Google, GoldmanSachs, PayTm, Uber and manymore..</p>
+                        <a class="btn btn-success" href="#register">Register NOW!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="features-3" id="register">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 ml-auto mr-auto">
+                    <h2 class="title">Register Now! For Life Changing Sessions</h2>
+                    <p class="description">FREE and ONE HOUR LONG SESSIONS. Sessions will be condicted online.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-8 ml-md-auto mr-md-auto">
+                    <iframe title="Google Registration form"onload="document.getElementsByClassName('freebirdFormviewerViewFooterEmbeddedBackground')[0].remove();" src="https://docs.google.com/forms/d/e/1FAIpQLSftBjE-bIbAQxLYaIU_eocSSeK7jjn1lN9qh9UyDjpB_0JmMw/viewform?embedded=true" width="639" height="750" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                </div>
+            </div>
+            <div class="row text-center"><div class="col-md-8 ml-auto mr-auto"><p class="description ">if this form doesnot load then please <a href="#contactus">click here</a></p></div></div>
+        </div>
+    </div>
+
+
 
 
 
@@ -120,6 +343,7 @@
             
             <div class="row">
                 <div class="col-md-8 ml-auto mr-auto">
+                    <button 
                     <h2 class="title">Amazing Results</h2>
                     <h4 class="description">Smarter, Better, Productive and Cheerful Lives has been acheived in lives of hundred of students, working professionals and adults .</h4>
                     <a class="btn btn-success" href="#register">Register NOW!</a>
@@ -159,145 +383,8 @@
             </div>
         </div>
     </div>
-    <div class="features-3" id="register">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 ml-auto mr-auto">
-                    <h2 class="title">Register Now! For Life Changing Sessions</h2>
-                    <p class="description">FREE and ONE HOUR LONG SESSIONS. Sessions will be condicted online.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-8 ml-auto mr-auto">
-                    <iframe onload="document.getElementsByClassName('freebirdFormviewerViewFooterEmbeddedBackground')[0].remove();" src="https://docs.google.com/forms/d/e/1FAIpQLSftBjE-bIbAQxLYaIU_eocSSeK7jjn1lN9qh9UyDjpB_0JmMw/viewform?embedded=true" width="639" height="750" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-                </div>
-            </div>
-            <div class="row text-center"><div class="col-md-8 ml-auto mr-auto"><p class="description ">if this form doesnot load then please <a href="#contactus">click here</a></p></div></div>
 
-            
-        </div>
-    </div>
-    <div class="features-3" id="Sessions">
-        <div class="container">
-            <div class="row quizpop" >
-                <div class="col-md-8 ml-auto mr-auto">
-                    <h2 class="title">Fun Quizzes</h2>
-                    <h4 class="">Gita Life Magic brings to you fun filled Free Prizes, like earphones, books, and manymore..</h4>
-                    <a class="btn btn-darkm" href="./quizzes.html">Play NOW!</a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-8 ml-auto mr-auto">
-                    <h2 class="title">Events and Programmes</h2>
-                    <p class="description">We conduct many online and offline sessions, workshops and camps all free of cost. Our one hour long sessions that surely transforms lives are the most populated and famous amongst youth.</p>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="info info-hover">
-                        <div class="icon icon-info ">
-                            <h1 >Work Shops</h1>
-                        </div>
-                        <h4 class="info-title">Time Management</h4>
-                        <h4 class="info-title">Stress Management</h4>
-                        <h4 class="info-title">Work and Life Balance</h4>
-                        <p class="description">And Many more. These are 4-5 hour long events with theroy and practicals, held weekly to hone hidden leader inside you. Register now to know more.</p>
-                        <a class="btn btn-info" href="#register">Register NOW!</a>
-                        
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="info info-hover">
-                        <div class="icon icon-primary ">
-                            <h1 >Sessions</h1>
-                        </div>
-                        <h4 class="info-title">Can A Scientist Believe in God?</h4>
-                        <h4 class="info-title">Law of Karma</h4>
-                        <h4 class="info-title">Vedas : Isn't Following the Blind Faith.</h4>
-                        <p class="description">And Many more. These are 1-2 hour long sessions, held weekly that kindle the hidden talents inside you. Register now to know more.</p>
-                        <a class="btn btn-primary" href="#register">Register NOW!</a>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="info info-hover">
-                        <div class="icon icon-success ">
-                            <h1 >Camps</h1>
-                        </div>
-                        <h4 class="info-title">2 Day Camps</h4>
-                        <h4 class="info-title">7 Day Camps</h4>
-                        <h4 class="info-title">28 Day Camps.</h4>
-                        <p class="description">Objective of camps to train the future leader. Our trained students have been placed in Google, GoldmanSachs, PayTm, Uber and manymore..</p>
-                        <a class="btn btn-success" href="#register">Register NOW!</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="section section-components" data-background-color="dark-red" id="aboutus">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 ml-auto mr-auto">
-                    <h2 class="text-center title">About US
-                        <br><small class="description">We are group of IITIANS, whose lives have been transformed by the teachings of Bhagavad Gita, hence we are trying to spread it's teachings to make a better world. And the best thing is,</small></h2>
-                    <h1 class="text-center h1-seo">WE are FREE FOREVER</h1>
-                    <h5 class="text-center description">Below are few books on whose our teachings are based, they include but not limited to Srimad Bhagavad Gita, Srimad Bhagavatam, Brahma Samhita, MahaBharata, Ramayan and manymore.</h5>
-
-                    <div class="space-50"></div>
-                </div>
-        	</div>
-
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="card-container first-card">
-                        <div class="card-component">
-                            <a id="loginButton" role="button">
-                                <div class="front">
-                                    <img src="./img/bgcard.jpg">
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card-container second-card">
-                        <div class="card-component">
-                            <a id="loginButton" role="button">
-                                <div class="front">
-                                    <img src="./img/sbcard.jpg">
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card-container third-card">
-                        <div class="card-component">
-                            <a id="loginButton" role="button">
-                                <div class="front">
-                                    <img src="./img/mahabhartacard.jpg">
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card-container fourth-card">
-                        <div class="card-component">
-                            <a id="loginButton" role="button">
-                                <div class="front">
-                                    <img src="./img/brahmasmhitacard.jpg">
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
     
 
 
@@ -356,6 +443,7 @@
                 </footer>
 
 <script src="./js/main.js" type="text/javascript"></script>
+
   
   <script type="text/javascript">
       $(document).ready(function(){
@@ -370,10 +458,33 @@
               var rellaxHeader = new Rellax('.rellax-header');
               var rellaxText = new Rellax('.rellax-text');
           }
+          $('#quizModal').modal('show');
+          function showQuizModal(){
+            $('#quizModal').modal('show');
+          }
 
       });
+
   </script>
-    
+  <script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxUw9L6az12dXj3M6_amE_F9DhNsjMP_cQOZGQFgjtSMS8twaoB/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))    
+     window.open("https://gitajoy.co.in/mahabharataquiz1.html","_self"); 
+  })
+</script>
+
 
 
 <style>
