@@ -178,7 +178,14 @@
                             <div class="form-group row d-none"> 
                                     <div class="col-12 ">
                                         <div class="input-group">
-                                            <input type="email" value="default@gmail.com" class="form-control" id="email" name="email" placeholder="Email Id" required>
+                                            <input type="email" value="bookssale@gmail.com" class="form-control" id="email" name="email" placeholder="Email Id" required>
+                                        </div>                                   
+                                    </div>
+                            </div>
+                            <div class="form-group row d-none"> 
+                                    <div class="col-12 ">
+                                        <div class="input-group">
+                                            <input type="text" value="BOOKSALE" class="form-control" id="purpose" name="purpose" placeholder="purpose" required>
                                         </div>                                   
                                     </div>
                             </div>
@@ -486,7 +493,8 @@
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
       .then(response => console.log('Success!', response))
       .catch(error => console.error('Error!', error.message))    
-     window.open("https://gitajoy.co.in/mahabharataquiz1.html","_self"); 
+     // window.open("https://gitajoy.co.in/mahabharataquiz1.html","_self"); 
+     $('#quizModal').modal('hide');
   })
 </script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
