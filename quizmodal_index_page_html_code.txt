@@ -44,3 +44,149 @@
         </div>
       </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="quizModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="quizModalLabel" aria-hidden="true">
+      <div class="modal-dialog mycolor3" role="document">
+        <div class="modal-content">
+          <div class="modal-header mycolor3">
+            <h5 class="modal-title text-center" style="color:#b71c1c;" id="quizModalLabel"><strong> What are you waiting for!!</strong></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+                    <img src="./img/bgposter.jpeg" alt="Bhagavad Gita">
+                <hr>
+                <!-- <h3 style="color:#b71c1c;" class="text-center"><strong>Buy NOW!!!</strong></h5> -->
+                    <p>Fill the form below, and we will contact you within a day, to send you a copy.</p>
+                <form id="quizform" name="submit-to-google-sheet">
+                            <div class="form-group row"> 
+                                    <div class="col-12 ">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="name" name="firstName" placeholder="Full Name" required>
+                                        </div>                                   
+                                    </div>
+                            </div>                            
+                            <div class="form-group row d-none"> 
+                                    <div class="col-12 ">
+                                        <div class="input-group">
+                                            <input type="email" value="bookssale@gmail.com" class="form-control" id="email" name="email" placeholder="Email Id" required>
+                                        </div>                                   
+                                    </div>
+                            </div>
+                            <div class="form-group row d-none"> 
+                                    <div class="col-12 ">
+                                        <div class="input-group">
+                                            <input type="text" value="BOOKSALE" class="form-control" id="purpose" name="purpose" placeholder="purpose" required>
+                                        </div>                                   
+                                    </div>
+                            </div>
+                            <div class="form-group row"> 
+                                    <div class="col-12 ">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone Number" required>
+                                        </div>                                   
+                                    </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-11 offset-1">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">I want my Gita.</button>
+                                </div>
+                            </div>
+                        </form>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+          if ($(window).width() >= 991){
+
+              setTimeout(function(){
+                  var rellax = new Rellax('.rellax', {
+                      center: true
+                  });
+              }, 5000);
+
+              var rellaxHeader = new Rellax('.rellax-header');
+              var rellaxText = new Rellax('.rellax-text');
+          }
+          $('#quizModal').modal('show');
+          function showQuizModal(){
+            $('#quizModal').modal('show');
+          }
+
+      });
+
+  </script>
+  <script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxUw9L6az12dXj3M6_amE_F9DhNsjMP_cQOZGQFgjtSMS8twaoB/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))    
+     // window.open("https://gitajoy.co.in/mahabharataquiz1.html","_self"); 
+     $('#quizModal').modal('hide');
+  })
+</script>

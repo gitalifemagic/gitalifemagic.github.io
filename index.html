@@ -122,6 +122,48 @@
                      
                     
                 </div>
+
+
+                <div class="row row-header " id="laptopBGPromo">
+
+                	<div class="col-md-8">
+	                	<form  name="submit-to-google-sheet-2">
+					        <div >
+					          <h1>Get Your Own Bhagawad Gita Now!!</h1>
+					        </div>
+
+							<label>To get your own copy of Bhagawad Gita Just Fill below details and we will contact you within a day!</label>	
+
+					        <div class="input-group">
+					                <input type="text" class="form-control" id="name" name="firstName" placeholder="Full Name" required>
+					        </div>  
+					        <div class="input-group d-none">
+	                            <input type="email" value="bookssale@gmail.com" class="form-control" id="email" name="email" placeholder="Email Id" required>
+	                        </div>   
+	                        <div class="input-group d-none">
+	                            <input type="text" value="BOOKSALE" class="form-control" id="purpose" name="purpose" placeholder="purpose" required>
+	                        </div>  
+	                        <div class="input-group">
+	                            <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone Number" required>
+	                        </div>     
+					        <button type="submit" class="btn btn-primary btn-lg">I want my Gita.</button>
+					      </form>
+                	</div>
+                	<div class="col-md-4">
+                        <div class="front">
+                            <img src="./img/bgpromo2.jpeg" alt="Bhagavad Gita ONLY FOR YOU!!">
+                        </div>
+                	</div>
+            </div>
+
+
+            <div class="row text-center d-none" id="laptopBGPromoThanks">
+            	<h2>Thank You Very Much, our Team Will Contact Your very soon :)</h2>
+            </div>
+
+
+       
+
             </div>
     </header>
     <style>
@@ -163,7 +205,7 @@
             </button>
           </div>
           <div class="modal-body">
-                    <img src="./img/bgposter.jpeg" alt="Bhagavad Gita">
+                    <img src="./img/bgpromo2.jpeg" alt="Bhagavad Gita">
                 <hr>
                 <!-- <h3 style="color:#b71c1c;" class="text-center"><strong>Buy NOW!!!</strong></h5> -->
                 	<p>Fill the form below, and we will contact you within a day, to send you a copy.</p>
@@ -204,6 +246,8 @@
                             </div>
                         </form>
             </div>
+
+
         </div>
       </div>
     </div>
@@ -228,7 +272,7 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row"  >
                 <div class="col-md-4">
                     <div class="card-container first-card">
                         <div class="card-component">
@@ -264,6 +308,7 @@
                 </div>
                 
             </div>
+
         </div>
     </div>
     
@@ -353,7 +398,7 @@
             
             <div class="row">
                 <div class="col-md-8 ml-auto mr-auto">
-                    <button 
+                    <button >
                     <h2 class="title">Amazing Results</h2>
                     <h4 class="description">Smarter, Better, Productive and Cheerful Lives has been acheived in lives of hundred of students, working professionals and adults .</h4>
                     <a class="btn btn-success" href="#register">Register NOW!</a>
@@ -481,6 +526,7 @@
   <script>
   const scriptURL = 'https://script.google.com/macros/s/AKfycbxUw9L6az12dXj3M6_amE_F9DhNsjMP_cQOZGQFgjtSMS8twaoB/exec'
   const form = document.forms['submit-to-google-sheet']
+  const form2 = document.forms['submit-to-google-sheet-2']
 
   form.addEventListener('submit', e => {
     e.preventDefault()
@@ -495,6 +541,25 @@
       .catch(error => console.error('Error!', error.message))    
      // window.open("https://gitajoy.co.in/mahabharataquiz1.html","_self"); 
      $('#quizModal').modal('hide');
+  })
+
+
+  form2.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form2)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+    fetch(scriptURL, { method: 'POST', body: new FormData(form2)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+       
+     // window.open("https://gitajoy.co.in/mahabharataquiz1.html","_self"); 
+
+     var element = document.getElementById("laptopBGPromoThanks");
+  	 element.classList.remove("d-none");
+  	 element = document.getElementById("laptopBGPromo");
+  	 element.classList.add("d-none");
+     
   })
 </script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
