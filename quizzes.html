@@ -184,10 +184,10 @@ $('#submit-form').on('click', function(e) {
     method: "GET",
     dataType: "json",
     data: $form.serializeObject()
-  }).success(
-    $("#myModal").modal('hide');
-  );
+  }).success();
+  $("#myModal").modal('hide');
 })
+  
 </script>
   <div class="features-3" id="kbc-solutions">
         <div class="container">
