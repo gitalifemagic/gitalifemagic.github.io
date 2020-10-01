@@ -146,21 +146,21 @@
                             <div class="form-group row"> 
                                     <div class="col-12 ">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" id="name" name="firstName" placeholder="Full Name" required>
+                                            <input type="text" class="form-control" id="name" name="reg-name" placeholder="Full Name" required>
                                         </div>                                   
                                     </div>
                             </div>                            
                             <div class="form-group row"> 
                                     <div class="col-12 ">
                                         <div class="input-group">
-                                            <input type="email" class="form-control" id="email" name="email" placeholder="Email Id(Optional)">
+                                            <input type="email" class="form-control" id="email" name="reg-email" placeholder="Email Id(Optional)">
                                         </div>                                   
                                     </div>
                             </div>
                             <div class="form-group row"> 
                                     <div class="col-12 ">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone Number" required>
+                                            <input type="text" class="form-control" id="phone" name="reg-phone" placeholder="Phone Number" required>
                                         </div>                                   
                                     </div>
                             </div>
@@ -177,19 +177,14 @@
   </div>
 </div>
 <script type="text/javascript">
+  const scriptURL='https://script.google.com/macros/s/AKfycbx2WH6me04BWYXbbYJXxDNmcaUxspivjL6YoYoj09boj81GVK1m/exec'
   const form = document.forms['submit-to-google-sheet']
 
   form.addEventListener('submit', e => {
     e.preventDefault()
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
       .then(response => console.log('Success!', response))
-      .catch(error => console.error('Error!', error.message))
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => console.log('Success!', response))
-      .catch(error => console.error('Error!', error.message))
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => console.log('Success!', response))
-      .catch(error => console.error('Error!', error.message))    
+      .catch(error => console.error('Error!', error.message))   
      // window.open("https://gitajoy.co.in/mahabharataquiz1.html","_self"); 
      $('#quizModal').modal('hide');
   })
