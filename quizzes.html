@@ -125,39 +125,42 @@
   
   
   
-  <div class="container">
+  <!-- Register pop up box -->
+<!-- Modal -->
+<div class="container">
   <!-- Modal -->
-  <div class="modal show" id="myModal" style="background-color: white;" tabindex="-1" role="dialog" aria-labelledby="registerDemoModalLabel" aria-hidden="true">
+  <div class="modal show" id="myModal" tabindex="-1" role="dialog" aria-labelledby="registerDemoModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-  <!-- Modal content-->
+    
+      <!-- Modal content-->
       <div class="modal-content" role="document">
         <div class="modal-header">
           <h5 class="modal-title text-center" style="color:#b71c1c;"><strong>Free Demo Gita Meditation Session</strong></h5>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
-          <img src="./img/register-img.jpg" max-width="100%" width="100%" height="250px" alt="Bhagavad Gita">
+          <img src="register-img.jpg" max-width="100%" width="1000%" height="250px" alt="Bhagavad Gita">
           <hr>
               <p>Fill the form, and we will share you the info about free demo sessions, accordingly.</p>
                 <form id="registerform" name="submit-to-google-sheet">
                             <div class="form-group row"> 
                                     <div class="col-12 ">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" id="name" name="registeredName" placeholder="Full Name" required>
+                                            <input type="text" class="form-control" id="name" name="firstName" placeholder="Full Name" required>
                                         </div>                                   
                                     </div>
                             </div>                            
                             <div class="form-group row"> 
                                     <div class="col-12 ">
                                         <div class="input-group">
-                                            <input type="email" class="form-control" id="email" name="registeredEmail" placeholder="Email Id(Optional)">
+                                            <input type="email" class="form-control" id="email" name="email" placeholder="Email Id(Optional)">
                                         </div>                                   
                                     </div>
                             </div>
                             <div class="form-group row"> 
                                     <div class="col-12 ">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" id="phone" name="registeredPhone" placeholder="Phone Number" required>
+                                            <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone Number" required>
                                         </div>                                   
                                     </div>
                             </div>
@@ -174,20 +177,23 @@
   </div>
 </div>
 <script type="text/javascript">
-  var $form = $('form#registerform'),
-    url = 'https://script.google.com/macros/s/AKfycbzESx1mCA8oX9WJM5CQAwLniEp8lfzL3TB2MaqfPwpksKgT7iUH/exec'
+  const form = document.forms['submit-to-google-sheet']
 
-$('#submit-form').on('click', function(e) {
-  e.preventDefault();
-  var jqxhr = $.ajax({
-    url: url,
-    method: "GET",
-    dataType: "json",
-    data: $form.serializeObject()
-  }).success();
-  $("#myModal").modal('hide');
-})
-  
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))    
+     // window.open("https://gitajoy.co.in/mahabharataquiz1.html","_self"); 
+     $('#quizModal').modal('hide');
+  })
+
 </script>
   <div class="features-3" id="kbc-solutions">
         <div class="container">
