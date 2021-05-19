@@ -49,11 +49,7 @@
                             <strong>Home</strong>
                         </a>
                     </li>
-                    <li class="nav-item" >
-                        <a href="./index.html#results" class="nav-link">
-                            <strong>Our Results</strong>
-                        </a>
-                    </li>
+            
                     <li class="nav-item">
                         <a href="./index.html#aboutus" class="nav-link">
                             <strong>About US</strong>
@@ -121,61 +117,30 @@
         }
     </style>
 
-    
+<!-- MVD -->    
+  <div class="dialog " data-dialog-id="image">
+		<div class="close" data-dialog-action="close"></div>
+		<a href="index.html#register"><img src="./img/bgpromo.gif" class="wide" alt="img"></a>
+		<!-- <div class="embedVideo autoplay " >
+            <iframe src="./assets/currentUse/bgoffer.mp4" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+          </div> -->
+		<!-- <iframe src="./assets/currentUse/bgoffer.mp4" class="autoplay"></iframe> -->
+		<div class="dialogContent">
+			<div class="text center">
+				<a href="index.html#register"><strong>Exclusive Offer</strong><br>
+					Grab your copy <b class="boldest">Today</b></a>
+			</div>
+		</div>
+		<div ><a href="index.html#register"><button class="button largest wide blue gradient crop" data-dialog-action="close" >Register Now!</button></a></div>
+		<div class="button small wide red gradient crop soundTrigger" data-sound-id="audio" data-dialog-action="close">Close</div>
+	</div>
+
   
   
   
-  <!-- Register pop up box -->
-<!-- Modal -->
-<div class="container" style="background: transparent;">
-  <!-- Modal -->
-  <div class="modal show" style="background: white;" id="myModal" tabindex="-1" role="dialog" aria-labelledby="registerDemoModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content" role="document">
-        <div class="modal-header">
-          <h5 class="modal-title text-center" style="color:#b71c1c;"><strong>Free Demo Gita Meditation Session</strong></h5>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        <div class="modal-body">
-          <img src="./img/register-img.jpg" max-width="100%" width="100%" height="250px" alt="Bhagavad Gita">
-          <hr>
-              <p>Fill the form, and we will share you the info about free demo sessions, accordingly.</p>
-                <form id="registerform" name="submit-to-google-sheet">
-                            <div class="form-group row"> 
-                                    <div class="col-12 ">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" id="name" name="reg-name" placeholder="Full Name" required>
-                                        </div>                                   
-                                    </div>
-                            </div>                            
-                            <div class="form-group row"> 
-                                    <div class="col-12 ">
-                                        <div class="input-group">
-                                            <input type="email" class="form-control" id="email" name="reg-email" placeholder="Email Id(Optional)">
-                                        </div>                                   
-                                    </div>
-                            </div>
-                            <div class="form-group row"> 
-                                    <div class="col-12 ">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" id="phone" name="reg-phone" placeholder="Phone Number" required>
-                                        </div>                                   
-                                    </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-11 offset-1">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="submit" id="submit-form" class="btn btn-primary">Register for free</button>
-                                </div>
-                            </div>
-                        </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+  
+  
+  
 <script type="text/javascript">
   const scriptURL='https://script.google.com/macros/s/AKfycbx2WH6me04BWYXbbYJXxDNmcaUxspivjL6YoYoj09boj81GVK1m/exec'
   const form = document.forms['submit-to-google-sheet']
