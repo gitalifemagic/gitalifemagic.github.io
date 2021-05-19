@@ -137,9 +137,67 @@
 		<div ><a href="index.html#register"><button class="button largest wide blue gradient crop" data-dialog-action="close" >Register Now!</button></a></div>
 		<div class="button small wide red gradient crop soundTrigger" data-sound-id="audio" data-dialog-action="close">Close</div>
 	</div>
+	
+		<!-- Welocome note -->
+	<div class="dialog " >
+      <div class="close" data-dialog-action="close"></div>
+      <div class="dialogContent">
+        <div class="text center">
+          <!-- For <b class="boldest">Motivational Content</b> Visit Us at our 
+          <a href="Blog.html"><b class="boldest">Blog</b></a> or via social media handles :
+          <br> -->
+          <a href="Contact.html">For <b class="boldest">Motivational Content</b> Visit Us at our social media handles :</a>
+          <br>
+          <ul class ="flex ">
+		    <li class="social-instagram equalElement" ><a target=”_blank” href="https://www.instagram.com/doongitameditationclasses/?r=nametag"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use></svg></a></li>
+		    <li class="social-facebook equalElement"><a target=”_blank” href="https://www.facebook.com/doongitameditationclasses-113137680322010/"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use></svg></a></li>
+		    <li class="social-youtube equalElement"> <a target=”_blank” href="https://www.youtube.com/channel/UCkvybOLNKhwI8uNKtQQvIXg"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#youtube"></use></svg></a></li>
+		    <li><div style="width : 30px"></div></li>
+		  </ul>
+
+        </div>
+      </div>
+    </div>
+	
+	
 	</div>
 
-  
+ 
+<audio src="./img/assets_audio_harekrsna.mp3" data-sound-id="audio" data-sound-fade="500" preload="auto" autoplay="true" loop="true"></audio>
+
+<script>
+  $(function(){
+
+    //mute when popup is opened
+    $('.popupTrigger').click(function(){
+
+      var $audio = $('audio[data-sound-id="audio"]'),
+          statusPaused = $audio[0].paused;
+
+      if (!statusPaused) {
+        $audio.animate({volume: 0}, 2000, function(){
+          $audio[0].pause();
+        });
+        window.checkSound = setInterval(function(){
+          if (!window.popupShown) {
+            $audio[0].play();
+            $audio.animate({volume: 1}, 2000);
+            clearInterval(window.checkSound);
+          }
+        },200);
+      }
+    });
+  })
+</script>
+
+
+<!-- Navigation -->
+<nav class="side ">
+  <div class="navigation">
+    <ul></ul>
+  </div></nav>
+<!-- navigation ends -->
+ 
   
   
   
